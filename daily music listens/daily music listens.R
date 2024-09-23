@@ -21,7 +21,7 @@ library(showtext)
 # Data
 # -----------------
 
-last.fm.df <- read.csv("/Users/perkot/GIT/data/last-fm-extract.csv",
+last.fm.df <- read.csv("last-fm-extract.csv",
                          header = TRUE,
                          stringsAsFactors=FALSE)
 
@@ -179,7 +179,7 @@ p
 # Save & View   
 # -----------------
 
-fname <- "/Users/perkot/GIT/data-visualisation/daily music listens/plots/lastfm.png"
+fname <- "/data-visualisation/daily music listens/plot/lastfm.png"
 ggsave(fname,  p, width = 10, height = 20, bg = "#f0eadf", units = "in", dpi = 96)
 viewer <- getOption("viewer")
 viewer(fname)
