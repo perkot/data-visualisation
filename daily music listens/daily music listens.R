@@ -171,7 +171,8 @@ p <-
         plot.background = element_rect(fill = "#f0eadf"),
         legend.background = element_rect(fill = "#f0eadf"),
         panel.border = element_blank(),
-        plot.margin = margin(0.7,0.7,0.7,0.7,"cm")
+        plot.margin = margin(0.7,0.7,0.7,0.7,"cm"),
+        title = element_text(margin = margin(t = 0, r = 0, b = 20, l = 0))
         )
 p
 
@@ -179,7 +180,8 @@ p
 # Save & View   
 # -----------------
 
-fname <- "/data-visualisation/daily music listens/plot/lastfm.png"
+fname <- "lastfm.png"
 ggsave(fname,  p, width = 10, height = 20, bg = "#f0eadf", units = "in", dpi = 96)
 viewer <- getOption("viewer")
 viewer(fname)
+
