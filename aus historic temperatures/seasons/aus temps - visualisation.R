@@ -1,6 +1,6 @@
-# ----------------------------------
-# DEPENDENCIES 
-# ----------------------------------
+# -----------------
+# Dependencies 
+# -----------------
 
 library(tidyverse)
 library(forcats)
@@ -83,7 +83,7 @@ p.max <- as_1960 %>%
         plot.background = element_rect(fill = "#fcf9f0"),
         legend.background = element_rect(fill = "#fcf9f0"),
         panel.border = element_blank(),
-        strip.text.x = element_text(size = 9, colour = "#4E4F4E"),
+        strip.text.x = element_text(size = 80, colour = "#4E4F4E", family = "Inter"),
         strip.background = element_rect(fill="#fcf9f0"),
         plot.margin = margin(0.7,0.4,0.1,0.2,"cm"),
         plot.title = element_text(colour = "#4E4F4E",
