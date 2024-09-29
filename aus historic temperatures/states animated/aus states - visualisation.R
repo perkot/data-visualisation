@@ -13,6 +13,9 @@ require(png)
 require(transformr)
 require(kableExtra)
 
+font_add_google("Inter")
+showtext_auto()
+
 # -----------------
 # Data
 # -----------------
@@ -63,7 +66,7 @@ temp.state$era = substr(temp.state$era,1,nchar(temp.state$era)-1)
 # to numeric
 temp.state$era <- as.numeric(temp.state$era)
 
-# PLOT
+# Plot
 state.plot.2 <- 
   ggplot(temp.state, aes(era, avgmax, group = state, color = state)) + 
   geom_line(size = 1.6) + 
@@ -72,14 +75,16 @@ state.plot.2 <-
   geom_text(aes(x = 2018, label = state, size = 16), hjust = 0) + 
   scale_colour_manual(values = state.colors.gradient.2) +
   coord_cartesian(clip = 'off') + 
-  labs(title = 'Average daily-maximum temperature in Australia over the past 100 years',
-       subtitle = 'Separated by state',
+  labs(title = 'Average temperature in C° over the past 100 years',
+       subtitle = 'Separated by Australian state',
        caption  = "Data Source: ACORN-SAT",
        y = 'C°',
        X = "Year") +
   theme_minimal() + 
   theme(legend.position = "none") +
-  theme(plot.margin = margin(5.5, 40, 5.5, 5.5)) + 
+  theme(plot.margin = margin(5.5, 40, 5.5, 5.5),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank()) + 
   theme_plot +
   transition_reveal(era) 
 
@@ -96,7 +101,7 @@ animate(state.plot.2,
         width = 768)
 state.plot.2.anim
 
-fname <- "austempstates.gif"
+fname <- "/Users/perkot/GIT/data-visualisation/aus historic temperatures/states animated/plot/austempstates.gif"
 anim_save(fname, state.plot.2.anim, width = 4000, height = 4000)
 viewer <- getOption("viewer")
 viewer(fname)
