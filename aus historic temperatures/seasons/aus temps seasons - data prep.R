@@ -10,7 +10,7 @@ library(forcats)
 # -----------------
 
 # http://www.bom.gov.au/climate/data/acorn-sat/
-tbl <- read.csv("ACORN-SAT-Clean.csv")
+tbl <- read.csv("/Users/perkot/GIT/data/ACORN-SAT-Clean.csv")
 
 # -----------------
 # Tidy up station names 
